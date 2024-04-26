@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Cake Sale</title>
+  <style>
+   body {
+    background-color: palevioletred;
+    font-family:Arial,sans-serif;
+   }
+  
+   .cake{
+    display: inline-block;
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    width: 200px;
+   }
+   .cake img{
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 10px 10px 0 0;
+   }
+   .cake h2{
+    font-weight: bold;
+    margin-top: 0;
+   }
+   .cake p{
+    margin-bottom: 20px;
+   }
+   .cake button{
+    background-color: #4CAF50;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor:pointer;
+   }
+   .cake button:hover {
+    background-color:  #3e8e41;
+   }
+   .payment-button {
+    text-align: center;
+    margin-top: 20px;
+  }
+  .payment-button button {
+    background-color: #4CAF50;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor:pointer;
+   }
+   .payment-button button:hover {
+    background-color:  #3e8e41;
+   }
+   </style>
+ </head>
+ <body bgcolor=" rgb(211, 109, 143)">
+ <div class="container">
+  <h1>Cake Sale</h1>
+  <div class="cake" id="cake1">
+   <img src="chocolate-cake-with-chocolate-frosting-recipe-15.jpg" alt="Chocolate Cake">
+   <h2>Chocolate Cake</h2>
+   <p>Moist chocolate cake with chocolate frosting</p>
+   <button onclick="buyCake('Chocolate Cake', '20')">Cake price(R20)</button>
+   </div>
+   <div class="cake" id="cake2">
+     <img src="vanilla-cake-sliced.jpg" alt="Vanilla Cake">
+   <h2>Vanilla Cake</h2>
+   <p>Delicious vanilla cake with creamy frosting</p>
+   <button onclick="buyCake('Vanilla Cake', '50')">Cake price(R50)</button>
+   </div>
+   <div class="cake" id="cake3">
+    <img src="Red velvet cake.jpeg" alt="Red Velvet Cake">
+   <h2>Red Velvet Cake</h2>
+   <p>Sweet red velvet cake with cream cheese frosting</p>
+   <button onclick="buyCake('Red Velvet Cake', '40')">Cake price(R40)</button>
+  </div>
+  <div class="cake" id="cake4">
+    <img src="Banana cake with cream cheese.jpeg" alt="Banana Cake">
+  <h2>Banana Cake</h2>
+  <p>Delicious Banana cake with cream cheese frosting</p>
+  <button onclick="buyCake('Banana Cake', '50')">Cake price(R50)</button>
+  </div>
+  <div class="cake" id="cake5">
+    <img src="New york baked cheese cake.jpeg" alt="Cheese Cake">
+  <h2>Cheese Cake</h2>
+  <p>New york baked cheese cake</p>
+  <button onclick="buyCake('Cheese Cake', '80')">Cake price(R80)</button>
+  </div>
+  <div class="cake" id="cake6">
+    <img src="carrot walnult cake.jpeg" alt="Carrot and Walnut Cake">
+  <h2>Carrot and Walnut Cake</h2>
+  <p>Carrot and walnut cake</p>
+  <button onclick="buyCake('Carrot and Walnut Cake', '40')">Cake price(R40)</button>
+  </div>
+  <div class="cake" id="cake7">
+    <img src="Lemon-Yogurt-Cake-Photo.webp" alt="Lemon Cake">
+  <h2>Lemon Cake</h2>
+  <p>Lemon yoghurt cake</p>
+  <button onclick="buyCake('Lemon Cake', '60')">Cake price(R60)</button>
+  </div>
+  <div class="cake" id="cake8">
+    <img src="OIP (2).jpeg" alt="Orange Cake">
+  <h2>Orange Cake</h2>
+  <p>Flourless orange cake</p>
+  <button onclick="buyCake('Orange Cake', '70')">Cake price(R70)</button>
+  </div>
+  <div class="cake" id="cake9">
+    <img src="Sponge-Cake-10-2048x1349.jpg" alt="Vanilla Sponge Cake">
+  <h2>Vanilla Sponge Cake</h2>
+  <p>Basic sponge cake</p>
+  <button onclick="buyCake('Vanilla Sponge Cake', '60')">Cake price(R60)</button>
+  </div>
+  <div class="cake" id="cake10">
+    <img src="classic.jpeg" alt="Classic Vanilla Cake">
+  <h2>Classic Vanilla Cake</h2>
+  <p>Classic no-bake vanilla cheese</p>
+  <button onclick="buyCake('Classic Vanilla Cake', '100')">Cake price(R100)</button>
+  </div>
+  <div class="cake" id="cake11">
+    <img src="OIP (1).jpeg" alt="Humming Bird Cake">
+  <h2>Humming Bird Cake</h2>
+  <p>Humming bird cake</p>
+  <button onclick="buyCake('Humming Bird Cake', '80')">Cake price(R80)</button>
+  </div>
+  <div class="cake" id="cake12">
+    <img src="jennys.jpeg" alt="Jenny's Coffee Cake">
+  <h2>Jenny's Coffee Cake</h2>
+  <p>Jenny's coffee cake</p>
+  <button onclick="buyCake('Jenny\'s Coffee Cake', '40')">Cake price(R40)</button>
+  </div>
+  <div class="cake" id="cake13">
+    <img src="vanilla-cake-sliced.jpg" alt="Black Forest Cake">
+  <h2>Black Forest Cake</h2>
+  <p>Black forest cake</p>
+  <button onclick="buyCake('Black Forest Cake', '90')">Cake price(R90)</button>
+  </div>
+  <div class="cake" id="cake14">
+    <img src="wp4017502.webp" alt="Rainbow Cake">
+  <h2>Rainbow Cake</h2>
+  <p>Layered rainbow cake</p>
+  <button onclick="buyCake('Rainbow Cake', '100')">Cake price(R100)</button>
+  </div>
+  <div class="payment-button">
+    <button onclick="proceedToPayment()">Proceed to Payment</button>
+  </div>
+</div>
+
+<script>
+  function buyCake(cakeName, price) {
+    sessionStorage.setItem('cakeName', cakeName);
+    sessionStorage.setItem('price', price);
+  }
+
+  function proceedToPayment() {
+    var cakeName = sessionStorage.getItem('cakeName');
+    var price = sessionStorage.getItem('price');
+    window.location.href ="payment.html";
+  }
+</script>
+</body>
+</html>

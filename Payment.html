@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Yummy Cakes Store - Payment Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            background-image: url('OIP.jpeg');
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 500px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+        }
+        form {
+            margin-top: 20px;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 5px;
+        }
+        .input-field {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+            font-size: 16px;
+        }
+        select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+            font-size: 16px;
+        }
+        .button {
+            background-color: #4CAF50;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .button:hover {
+            background-color: #45a049;
+        }
+        .error-message {
+            color: red;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Yummy Cakes Store - Payment Page</h1>
+        <form id="paymentForm">
+            <div class="form-group">
+                <label class="label" for="order-id">Order ID:</label>
+                <input type="text" id="order-id" class="input-field" placeholder="Enter order ID" required>
+            </div>
+            <div class="form-group">
+                <label class="label" for="order-date">Order Date:</label>
+                <input type="date" id="order-date" class="input-field" required>
+            </div>
+            <div class="form-group">
+                <label class="label" for="cake-type">Type of Cake:</label>
+                <input type="text" id="cake-type" class="input-field" placeholder="Enter type of cake" required>
+            </div>
+            <div class="form-group">
+                <label class="label" for="total">Total (R):</label>
+                <input type="number" id="total" class="input-field" placeholder="Enter total amount" min="0" step="0.01" required>
+            </div>
+            <div class="form-group">
+                <label class="label" for="payment-method">Payment Method:</label>
+                <select id="payment-method" class="input-field" required>
+                    <option value="">Select Payment Method</option>
+                    <option value="credit-card">Credit Card</option>
+                    <option value="paypal">PayPal</option>
+                    <option value="bank-transfer">Bank Transfer</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label class="label" for="card-number">Card Number:</label>
+                <input type="text" id="card-number" class="input-field" placeholder="Card Number" required>
+                <span id="card-error" class="error-message"></span>
+            </div>
+            <div class="form-group">
+                <label class="label" for="expiration-date">Expiration Date:</label>
+                <input type="text" id="expiration-date" class="input-field" placeholder="MM/YY" required>
+                <span id="expiration-error" class="error-message"></span>
+            </div>
+            <div class="form-group">
+                <label class="label" for="security-code">Security Code:</label>
+                <input type="text" id="security-code" class="input-field" placeholder="Security Code" required>
+                <span id="security-error" class="error-message"></span>
+            </div>
+            <div class="form-group">
+                <button class="button" type="submit">Pay Now</button>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('paymentForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            var orderID = document.getElementById("order-id").value;
+            var orderDate = document.getElementById("order-date").value;
+            var cakeType = document.getElementById("cake-type").value;
+            var total = document.getElementById("total").value;
+            var paymentMethod = document.getElementById("payment-method").value;
+            var cardNumber = document.getElementById("card-number").value;
+            var expirationDate = document.getElementById("expiration-date").value;
+            var securityCode = document.getElementById("security-code").value;
+
+            // Reset error messages
+            document.getElementById('card-error').innerText = "";
+            document.getElementById('expiration-error').innerText = "";
+            document.getElementById('security-error').innerText = "";
+
+            // Validate Card Number
+            var cardNumberRegex = /^[0-9]{16}$/;
+            if (!cardNumberRegex.test(cardNumber)) {
+                document.getElementById('card-error').innerText = "Please enter a valid card number (16 digits).";
+                return false;
+            }
+
+            // Validate Expiration Date
+            var expirationDateRegex = /^(0[1-9]|1[0-2])\/?([0-9]{2})$/;
+            if (!expirationDateRegex.test(expirationDate)) {
+                document.getElementById('expiration-error').innerText = "Please enter a valid expiration date (MM/YY).";
+                return false;
+            }
+
+            // Validate Security Code
+            var securityCodeRegex = /^[0-9]{3}$/;
+            if (!securityCodeRegex.test(securityCode)) {
+                document.getElementById('security-error').innerText = "Please enter a valid security code (3 digits).";
+                return false;
+            }
+
+            alert("Payment successful.\nRedirecting to items page...");
+            // Redirect to the items page
+            window.location.href = "index.html";
+        });
+    </script>
+</body>
+</html>
